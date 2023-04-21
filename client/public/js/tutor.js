@@ -62,7 +62,7 @@ const tutorSignUp = () => {
     }
   }
 
-  fetch(`http://${host}/tutor/create`, {
+  fetch(`${host}/tutor/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -96,7 +96,7 @@ const tutorSignUp = () => {
     })
     .then(function (data) {
       window.localStorage.setItem("loginTutor", JSON.stringify(data.tutor));
-      window.location.assign(`http://${host}/pages/tutorDashboard.html`);
+      window.location.assign(`${host}/pages/tutorDashboard.html`);
     });
 };
 
@@ -231,7 +231,7 @@ const loginTutor = () => {
   document.getElementById("errAuth").innerHTML = " ";
   var tutorLoginEmail = document.getElementById("tutorLoginEmail").value;
   var tutorLoginPassword = document.getElementById("tutorLoginPassword").value;
-  fetch(`http://${host}/tutor/login`, {
+  fetch(`${host}/tutor/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -260,7 +260,7 @@ const loginTutor = () => {
       }
     })
     .then((data) => {
-      window.location.assign(`http://${host}/pages/tutorDashboard.html`);
+      window.location.assign(`${host}/pages/tutorDashboard.html`);
       window.localStorage.setItem("loginTutor", JSON.stringify(data.tutor));
     });
 };
@@ -292,7 +292,7 @@ const forgotPassword = () => {
 };
 
 const forgotPasswordSendEmail = () => {
-  fetch(`http://${host}/tutor/forgotPassword`, {
+  fetch(`${host}/tutor/forgotPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -342,7 +342,7 @@ const forgotPasswordSendEmail = () => {
 };
 
 const forgotPasswordSendOtp = () => {
-  fetch(`http://${host}/tutor/checkOtp`, {
+  fetch(`${host}/tutor/checkOtp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -372,7 +372,7 @@ const forgotPasswordSendOtp = () => {
 };
 
 const forgotPasswordSendPassword = () => {
-  fetch(`http://${host}/tutor/newPassword`, {
+  fetch(`${host}/tutor/newPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

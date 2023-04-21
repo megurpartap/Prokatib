@@ -1,7 +1,7 @@
 const host = "https://prokatib.onrender.com/";
 
 const contactUs = () => {
-  fetch(`http://${host}/contactUs`, {
+  fetch(`${host}/contactUs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

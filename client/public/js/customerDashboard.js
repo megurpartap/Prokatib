@@ -3,13 +3,13 @@ const host = "https://prokatib.onrender.com/";
 const loadDetails = () => {
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
   if (!loginCustomer) {
-    window.open(`http://${host}/index.html`, "_self");
+    window.open(`${host}/index.html`, "_self");
   }
 
   $(".customerDashboardHeading").html(
     `Welcome ${loginCustomer.customerName}!!</br><span style="font-size:1.5rem">Your Customer Id: ${loginCustomer._id}</span>`
   );
-  fetch(`http://${host}/customer/getLiveOrders`, {
+  fetch(`${host}/customer/getLiveOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -27,7 +27,7 @@ const loadDetails = () => {
         $(".customerOrderId").text(
           `(You currently don't have any live orders.)`
         );
-        fetch(`http://${host}/customer/getPreviousOrders`, {
+        fetch(`${host}/customer/getPreviousOrders`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json; charset=utf-8",
@@ -60,7 +60,7 @@ const loadDetails = () => {
         return;
       }
       $(".cd-processList").removeClass("display-none");
-      fetch(`http://${host}/order/getOrderDetails`, {
+      fetch(`${host}/order/getOrderDetails`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -121,7 +121,7 @@ const submitNewWork = () => {
   if (!validateInput("orderService orderFiles")) {
     return;
   }
-  fetch(`http://${host}/order/create`, {
+  fetch(`${host}/order/create`, {
       method: "POST",
       body: formData,
     })
@@ -148,7 +148,7 @@ const loadLiveOrders = () => {
   var h = document.querySelector(".liveOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}/customer/getLiveOrders`, {
+  fetch(`${host}/customer/getLiveOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -223,7 +223,7 @@ const loadPreviousOrders = () => {
   var h = document.querySelector(".previousOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}/customer/getPreviousOrders`, {
+  fetch(`${host}/customer/getPreviousOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -307,7 +307,7 @@ const loadCancelledOrders = () => {
   var h = document.querySelector(".cancelledOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}/customer/getCancelledOrders`, {
+  fetch(`${host}/customer/getCancelledOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -399,7 +399,7 @@ const createOrderReview = (orderId) => {
     `${orderId}-createOrderReview`
   ).style.backgroundColor = "transparent";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}/review/create`, {
+  fetch(`${host}/review/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -434,7 +434,7 @@ const createPreviousOrderReview = (orderId) => {
     `${orderId}-previousOrderReviewTextArea`
   ).style.backgroundColor = "transparent";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}/review/create`, {
+  fetch(`${host}/review/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -465,7 +465,7 @@ const uploadFilesFromDashboard = () => {
     formData.append("uploadedFiles", file[index]);
   }
   $.ajax({
-    url: `http://${host}/order/uploadFile`, //Server script to process data
+    url: `${host}/order/uploadFile`, //Server script to process data
     type: "POST",
     data: formData,
     contentType: false,
@@ -488,7 +488,7 @@ const openChatBox = () => {
 };
 
 const logout = () => {
-  window.location.assign(`http://${host}/index.html`);
+  window.location.assign(`${host}/index.html`);
 };
 
 const updateCustomerEmail = () => {
@@ -497,7 +497,7 @@ const updateCustomerEmail = () => {
   if (!validateInput("updateEmailInput")) {
     return;
   }
-  fetch(`http://${host}/customer/updateCustomerEmail`, {
+  fetch(`${host}/customer/updateCustomerEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -527,7 +527,7 @@ const updateCustomerPhoneNumber = () => {
   if (!validateInput("updatePhoneNumberInput")) {
     return;
   }
-  fetch(`http://${host}/customer/updateCustomerPhoneNumber`, {
+  fetch(`${host}/customer/updateCustomerPhoneNumber`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
