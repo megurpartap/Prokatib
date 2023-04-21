@@ -1,4 +1,4 @@
-const host = "https://prokatib.onrender.com/";
+const host = "https://prokatib.onrender.com";
 
 const loadDetails = () => {
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));

@@ -1,4 +1,4 @@
-const host = "https://prokatib.onrender.com/";
+const host = "https://prokatib.onrender.com";
 
 const showThis = (selector) => {
   const form = document.querySelector(selector);
