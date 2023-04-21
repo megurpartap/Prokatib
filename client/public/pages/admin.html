@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <!-- BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/customer.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+  <body
+    onload="loadNewOrders(); loadNewTutors(); loadNewReviews(); loadNewMessages()"
+  >
+    <!-- navbar Starts -->
+    <nav class="navbar">
+      <a href="../index.html"
+        ><img src="../assets/logo-full.jpg" alt="logo" srcset="" width="10%"
+      /></a>
+      <h1 class="navbarHeading">Prokatib</h1>
+      <a href="contact.html" class="contactUsButton">Contact Us</a>
+    </nav>
+    <!-- navbar Ends -->
+    <!-- admin section starts -->
+    <section class="adminDashboardSection">
+      <div class="container">
+        <h1 class="adminDashboardHeading text-center mt-3">Welcome Admin</h1>
+      </div>
+      <div class="container">
+        <div
+          class="row cd-content mt-5 d-flex flex-md-row flex-sm-column-reverse"
+        >
+          <div class="col-md-6 ad-contentLeft">
+            <ul class="ad-optionList">
+              <li
+                class="ad-option mb-4 mt-2 newOrderOption"
+                onclick="showThis('.newOrdersSection');loadNewOrders();hideThis('#freechatpopup')"
+              >
+                New Orders
+              </li>
+              <li
+                class="ad-option mb-4 mt-2"
+                onclick="showThis('.ongoingOrdersSection'); loadOngoingOrders();hideThis('#freechatpopup') "
+              >
+                Ongoing Orders
+              </li>
+              <li
+                class="ad-option mb-4 mt-2"
+                onclick="showThis('.completedOrdersSection'); loadCompletedOrders();hideThis('#freechatpopup')"
+              >
+                Completed Orders
+              </li>
+              <li
+                class="ad-option mb-4 mt-2"
+                onclick="showThis('.cancelledOrdersSection'); loadCancelledOrders();hideThis('#freechatpopup')"
+              >
+                Cancelled Orders
+              </li>
+              <li class="ad-option mb-4 mt-2">Chat For Corrections</li>
+              <li class="ad-option mb-4 mt-2" onclick="logout()">Logout</li>
+            </ul>
+            <hr class="col-12 d-block d-md-none" />
+          </div>
+          <div class="col-md-6 ad-contentRight">
+            <ul class="ad-optionList">
+              <li
+                class="ad-option mb-4 mt-2 newTutorOption"
+                onclick="showThis('.newTutorsSection');loadNewTutors();hideThis('#freechatpopup')"
+              >
+                New Tutors
+              </li>
+              <li
+                class="ad-option mb-4 mt-2"
+                onclick="showThis('.approvedTutorsSection'); loadApprovedTutors();hideThis('#freechatpopup') "
+              >
+                Approved Tutors
+              </li>
+              <hr />
+              <li
+                class="ad-option mb-4 mt-2 newReviewOption"
+                onclick="showThis('.newReviewsSection');loadNewReviews();hideThis('#freechatpopup')"
+              >
+                New Reviews
+              </li>
+              <li
+                class="ad-option mb-4 mt-2 highlightedReviewOption"
+                onclick="showThis('.highlightedReviewsSection');loadHighlightedReviews();hideThis('#freechatpopup')"
+              >
+                Highlighted Reviews
+              </li>
+              <hr />
+              <li
+                class="ad-option mb-4 mt-2 newMessageOption"
+                onclick="showThis('.newMessagesSection');loadNewMessages();hideThis('#freechatpopup')"
+              >
+                New Messages
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- admin section end -->
+
+    <!-- New Orders Starts -->
+    <section class="container-fluid newOrdersSection">
+      <div class="col-lg-11">
+        <div class="newOrdersContainer container">
+          <div class="newOrdersSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.newOrdersSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="newOrdersText sectionText text-center">
+            <h1>New Orders</h1>
+          </div>
+          <div class="newOrdersContent container-fluid">
+            <div
+              class="row justify-content-around newOrderContentRow newOrderUnderRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around newOrderContentRow newOrderMasterRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around newOrderContentRow newOrderWebRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around newOrderContentRow newOrderJournalRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around newOrderContentRow newOrderProofRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around newOrderContentRow newOrderOfficialRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Orders ends -->
+
+    <!-- Ongoing Orders Starts -->
+    <section class="container-fluid ongoingOrdersSection display-none">
+      <div class="col-lg-11">
+        <div class="ongoingOrdersContainer container">
+          <div class="ongoingOrdersSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.ongoingOrdersSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="ongoingOrdersText sectionText text-center">
+            <h1>Ongoing Orders</h1>
+          </div>
+          <div class="ongoingOrdersContent container-fluid">
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderUnderRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderMasterRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderWebRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderJournalRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderProofRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around ongoingOrderContentRow ongoingOrderOfficialRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ongoing Orders ends -->
+
+    <!-- Tutor Details Section -->
+
+    <section class="container-fluid tutorDetailSection display-none">
+      <div class="col-lg-11">
+        <div class="tutorDetailContainer container">
+          <div class="tutorDetailSectionCross sectionCross">
+            <i
+              class="bi bi-arrow-left-circle"
+              onclick="hideThis('.tutorDetailSection');hideThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="tutorDetailText sectionText text-center">
+            <h1>Tutor Details</h1>
+          </div>
+          <div class="tutorDetailContent container-fluid">
+            <div class="row justify-content-around tutorDetailContentRow mt-2">
+              <h3 class="tutorDetailName text-center">
+                <!--  -->
+              </h3>
+              <h4 class="tutorDetailEmail mt-4"></h4>
+              <h4 class="tutorDetailPhoneNumber"></h4>
+              <h4 class="tutorDetailId"></h4>
+              <h4 class="tutorDetailAbout"></h4>
+              <h4 class="text-danger mt-4">Interests:</h4>
+              <ul class="tutorDetailInterestList"></ul>
+              <div class="tutorDetailChatButtonDiv text-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutor Details Section -->
+
+    <!-- Completed Orders Starts -->
+    <section class="container-fluid completedOrdersSection display-none">
+      <div class="col-lg-11">
+        <div class="completedOrdersContainer container">
+          <div class="completedOrdersSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.completedOrdersSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="completedOrdersText sectionText text-center">
+            <h1>Completed Orders</h1>
+          </div>
+          <div class="completedOrdersContent container-fluid">
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderUnderRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderMasterRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderWebRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderJournalRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderProofRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderOfficialRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Completed Orders ends -->
+
+    <!-- Completed Orders Starts -->
+    <section class="container-fluid completedOrdersSection display-none">
+      <div class="col-lg-11">
+        <div class="completedOrdersContainer container">
+          <div class="completedOrdersSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.completedOrdersSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="completedOrdersText sectionText text-center">
+            <h1>Completed Orders</h1>
+          </div>
+          <div class="completedOrdersContent container-fluid">
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderUnderRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderMasterRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderWebRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderJournalRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderProofRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around completedOrderContentRow completedOrderOfficialRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Completed Orders ends -->
+
+    <!-- Cancelled Orders Starts -->
+    <section class="container-fluid cancelledOrdersSection display-none">
+      <div class="col-lg-11">
+        <div class="cancelledOrdersContainer container">
+          <div class="cancelledOrdersSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.cancelledOrdersSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="cancelledOrdersText sectionText text-center">
+            <h1>Cancelled Orders</h1>
+          </div>
+          <div class="cancelledOrdersContent container-fluid">
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderUnderRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderMasterRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderWebRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderJournalRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderProofRow mt-3"
+            >
+              <!--  -->
+            </div>
+            <div
+              class="row justify-content-around cancelledOrderContentRow cancelledOrderOfficialRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cancelled Orders ends -->
+    <!-- New Tutors Starts -->
+    <section class="container-fluid newTutorsSection">
+      <div class="col-lg-11">
+        <div class="newTutorsContainer container">
+          <div class="newTutorsSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.newTutorsSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="newTutorsText sectionText text-center">
+            <h1>New Tutors</h1>
+          </div>
+          <div class="newTutorsContent container-fluid">
+            <div class="row justify-content-around newTutorContentRow mt-3">
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Orders ends -->
+
+    <!-- Approved Tutors Starts -->
+    <section class="container-fluid approvedTutorsSection">
+      <div class="col-lg-11">
+        <div class="approvedTutorsContainer container">
+          <div class="approvedTutorsSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.approvedTutorsSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="approvedTutorsText sectionText text-center">
+            <h1>Approved Tutors</h1>
+          </div>
+          <div class="approvedTutorsContent container-fluid">
+            <div
+              class="row justify-content-around approvedTutorContentRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Orders ends -->
+
+    <!-- Review Section -->
+
+    <section class="container-fluid newReviewsSection display-none">
+      <div class="col-lg-11">
+        <div class="newReviewsContainer container">
+          <div class="newReviewsSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.newReviewsSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="newReviewsText sectionText text-center">
+            <h1>Reviews</h1>
+          </div>
+          <div class="newReviewsContent container-fluid">
+            <div class="row justify-content-around newReviewContentRow mt-3">
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlighted Review Section -->
+
+    <section class="container-fluid highlightedReviewsSection display-none">
+      <div class="col-lg-11">
+        <div class="highlightedReviewsContainer container">
+          <div class="highlightedReviewsSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.highlightedReviewsSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="highlightedReviewsText sectionText text-center">
+            <h1>Reviews</h1>
+          </div>
+          <div class="highlightedReviewsContent container-fluid">
+            <div
+              class="row justify-content-around highlightedReviewContentRow mt-3"
+            >
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="container-fluid newMessagesSection display-none">
+      <div class="col-lg-11">
+        <div class="newMessagesContainer container">
+          <div class="newMessagesSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.newMessagesSection');showThis('#freechatpopup')"
+            ></i>
+          </div>
+          <div class="newMessagesText sectionText text-center">
+            <h1>Messages</h1>
+          </div>
+          <div class="newMessagesContent container-fluid">
+            <div class="row justify-content-around newMessageContentRow mt-3">
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- message section -->
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../js/admin.js"></script>
+    <script
+      type="text/javascript"
+      src="https://popupsmart.com/freechat.js"
+    ></script>
+    <script>
+      window.start.init({
+        title: "Hi customer! ✌",
+        message:
+          "Hi! Admin this side. Welcome to the chat support. You can ask your queries here. Do keep in mind that you will be connected via your Whatsapp number after you press send. So how may I Help You? 😊 ",
+        color: "#FFDA03",
+        position: "right",
+        placeholder: "Enter your message",
+        withText: "Write with",
+        viaWhatsapp: "Or write us directly via Whatsapp",
+        gty: "Go to your",
+        awu: "and write us",
+        connect: "Connect now",
+        button: "Queries? Ask Here.",
+        device: "everywhere",
+        logo: "https://d2r80wdbkwti6l.cloudfront.net/LSywk25I2oWNUKpxduoxni23XOJvPMdL.jpg",
+        person:
+          "https://d2r80wdbkwti6l.cloudfront.net/N1drlMggtaebtGEJXyv4O2hVcrFAjFZm.jpg",
+        services: [{ name: "whatsapp", content: "+919517038414" }],
+      });
+    </script>
+  </body>
+</html>

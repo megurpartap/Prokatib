@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undergraduate Work</title>
+    <!-- phoneNumbr -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!-- BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/buttonContent.css" />
+  </head>
+  <body>
+    <!-- navbar Starts -->
+    <nav class="navbar">
+      <a href="../index.html"
+        ><img src="../assets/logo-full.jpg" alt="logo" srcset="" width="10%"
+      /></a>
+      <h1 class="navbarHeading">Prokatib</h1>
+      <a href="contact.html" class="contactUsButton">Contact Us</a>
+    </nav>
+    <!-- navbar Ends -->
+
+    <section class="contentWork">
+      <h2 class="contentHeading">Undergraduate Work</h2>
+      <div class="contentUpper">
+        <div class="contentLeft">
+          <p>
+            We give 100% guarantee that our work is original and if marked by a
+            teacher, it will easily score over 55% marks.
+          </p>
+          <p>
+            We have experts from all subjects and all fields, such as
+            <strong
+              >Management, Accounting, Physics, Chemistry, Biology,
+              Construction, Fire Science, IT, Engineering,</strong
+            >
+            etc.
+          </p>
+          <p>We do ALL type of work, such as:</p>
+          <ul class="contentList">
+            <li class="contentListItem">Essay writing</li>
+            <li class="contentListItem">Mathematics solutions</li>
+            <li class="contentListItem">Report writing</li>
+            <li class="contentListItem">Proposal design for research</li>
+            <li class="contentListItem">Budget calculations</li>
+            <li class="contentListItem">
+              Software simulations like Solidworks, Illustrators, Excel, Adobe,
+              FDS, etc
+            </li>
+            <li class="contentListItem">Dissertation and thesis writing</li>
+            <li class="contentListItem">Literature reviews</li>
+            <li class="contentListItem">Model making and prototypes, etc</li>
+          </ul>
+        </div>
+        <div class="contentRight">
+          <div class="headerButtonsAndForms">
+            <div class="headerButtons">
+              <button class="placeOrderButton">Place Order</button>
+              <button class="loginButton">Login</button>
+            </div>
+            <div class="headerForms">
+              <form
+                class="placeOrderForm disabledForm"
+                data-opened="False"
+                action="http://localhost:8001/customer/create"
+                novalidate
+                enctype="multipart/form-data"
+                method="post"
+              >
+                <input
+                  type="text"
+                  placeholder="Name"
+                  id="customerName"
+                  name="customerName"
+                  class="form-control"
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email ID"
+                  id="customerEmail"
+                  name="customerEmail"
+                  class="form-control"
+                  required
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  id="customerPhoneNumber"
+                  name="customerPhoneNumber"
+                  class="form-control"
+                  required
+                />
+                <select name="orderService" id="orderService" required>
+                  <option value="" disabled selected>
+                    Choose Your Service
+                  </option>
+                  <option value="undergraduate">Undergraduate Work</option>
+                  <option value="master">Master & PhD work</option>
+                  <option value="proofreading">
+                    Proofreading & Plagiarism
+                  </option>
+                  <option value="journal">
+                    Journal Articles & Patent Drafts
+                  </option>
+                  <option value="officialLetters">
+                    Official Letters (Visa, Cover Letter, CV)
+                  </option>
+                  <option value="website">Website, Logo & Marketing</option>
+                </select>
+                <textarea
+                  name="orderInstructions"
+                  cols="30"
+                  rows="4"
+                  placeholder="Write Instructions"
+                  id="orderInstructions"
+                ></textarea>
+                <input
+                  type="file"
+                  name="uploadedFiles"
+                  class="placeOrderFileInput"
+                  id="orderFiles"
+                  required
+                  multiple
+                  onchange="uploadFiles()"
+                />
+                <input type="text" class="display-none orderFileNames" />
+                <button type="button" onclick="placeOrder()">Submit</button>
+              </form>
+              <form
+                class="loginForm disabledForm"
+                data-opened="False"
+                action="#"
+              >
+                <div class="mt-2" id="userAlreadyAuth"></div>
+                <input
+                  type="email"
+                  placeholder="Email ID"
+                  id="customerLoginEmail"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  id="customerLoginPassword"
+                  placeholder="Password"
+                  autocomplete="true"
+                />
+                <div class="mt-2" id="errorAuth"></div>
+                <div class="loginButtonAndForgot">
+                  <button type="button" onclick="loginCustomer()">
+                    Submit
+                  </button>
+                  <p onclick="showThis('#forgotPasswordSection')">
+                    Forgot Password
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+          <img class="contentImage" src="../assets/books.jpg" alt="" />
+        </div>
+      </div>
+      <div class="contentBottom">
+        <p>
+          Please submit your file with all instructions and we will tell you how
+          much it will cost. We will also give you a guarantee on the solution
+          before we take your order. So you will know that our service is 1st
+          Class.
+        </p>
+        <p>
+          <strong>Disclaimer:</strong> All institutions expect you to submit
+          your own work. So it is your responsibility to make sure that you do.
+        </p>
+      </div>
+    </section>
+
+    <!-- Password setup starts -->
+    <section id="passwordSetSection">
+      <div class="passwordSetContainer">
+        <div class="passwordSetText">
+          <h1>Your Order is Created.</h1>
+          <h3>Set Your Password</h3>
+        </div>
+        <form class="passwordSetForm">
+          <input
+            type="password"
+            id="customerPassword"
+            placeholder="Enter Password"
+            autocomplete="true"
+          />
+          <input
+            type="password"
+            id="customerPasswordConfirm"
+            placeholder="Confirm Password"
+            autocomplete="true"
+          />
+          <button type="button" id="setPasswordButton" onclick="setPassword()">
+            Set Password
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- Password setup ends -->
+
+    <!-- forgot password starts -->
+    <section id="forgotPasswordSection">
+      <div class="forgotPasswordContainer">
+        <div class="forgotPasswordSectionCross sectionCross">
+          <i
+            class="bi bi-x-circle"
+            onclick="hideThis('#forgotPasswordSection')"
+          ></i>
+        </div>
+        <div class="forgotPasswordText">
+          <h3>Reset Your Password</h3>
+        </div>
+        <form class="forgotPasswordForm">
+          <input
+            type="email"
+            id="forgotPasswordCustomerEmail"
+            placeholder="Enter Your Email"
+          />
+          <input
+            type="number"
+            id="forgotPasswordCustomerOtp"
+            placeholder="Enter Your OTP"
+            class="display-none"
+            disabled
+          />
+          <input
+            type="password"
+            id="forgotPasswordNewPassword"
+            placeholder="Enter New Password"
+            class="display-none"
+            disabled
+            autocomplete="true"
+          />
+          <p class="forgotPasswordMessage text-danger display-none"></p>
+          <button
+            type="button"
+            id="forgotPasswordButton"
+            class="mt-3"
+            onclick="forgotPassword()"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- forgot password end -->
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- owl carousal -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="../index.js"></script>
+  </body>
+  <script>
+    const phoneInputField = document.querySelector("#customerPhoneNumber");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
+</html>

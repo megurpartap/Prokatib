@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminLoginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.adminLoginForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px gray solid;
+  margin-bottom: 0.8rem;
+}
+
+.adminLoginForm button {
+  cursor: pointer;
+  min-width: 15vw;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  float: left;
+  background-color: yellow;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.ad-optionList {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.ad-processList {
+  font-size: 1.4rem;
+}
+
+.ad-option {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.newOrdersSection,
+.ongoingOrdersSection,
+.completedOrdersSection,
+.cancelledOrdersSection,
+.newTutorsSection,
+.approvedTutorsSection,
+.tutorDetailSection,
+.newReviewsSection,
+.newMessagesSection,
+.highlightedReviewsSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorDetailSection {
+  z-index: 100;
+}
+
+.newOrdersContainer,
+.ongoingOrdersContainer,
+.completedOrdersContainer,
+.cancelledOrdersContainer,
+.newTutorsContainer,
+.approvedTutorsContainer,
+.tutorDetailContainer,
+.newReviewsContainer,
+.newMessagesContainer,
+.highlightedReviewsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 1rem 4rem;
+  height: 80vh;
+  max-width: 80vw;
+  background-color: rgb(235, 235, 235);
+  border-radius: 2rem;
+  overflow-y: scroll;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.newOrder,
+.ongoingOrder,
+.completedOrder,
+.cancelledOrder,
+.newTutor,
+.approvedTutor,
+.newReview,
+.newMessage,
+.highlightedReview {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 3px 5px rgba(216, 216, 216, 0.527);
+  overflow: hidden;
+}
+
+.completedOrder,
+.cancelledOrder {
+  padding-top: 1rem;
+}
+
+.completedOrder i,
+.cancelledOrder i {
+  font-size: 1.5rem;
+}
+
+.newOrder ul li {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.ad-process p {
+  font-size: 0.8rem;
+}
+
+.newOrder select {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid gray;
+  margin-bottom: 0.8rem;
+  width: 90%;
+}
+
+.newOrder button,
+.newReview button,
+.newMessage button,
+.highlightedReview button,
+.ongoingOrder button {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  background-color: yellow;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+.noOrders {
+  width: 50%;
+}
+
+.rejectionMessageDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.newOrderNotification {
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: -1rem;
+}
+
+.tutorDetailSpan {
+  cursor: pointer;
+}
+
+.tutorDetailSpan:hover {
+  text-decoration: underline;
+}
+
+.chatMessage {
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.cd-option.chatMessageOption {
+  padding: 0;
+}
+
+.newOrderChatIcon,
+.ongoingOrderChatIcon,
+.completedOrderChatIcon,
+.cancelledOrderChatIcon {
+  position: absolute;
+  font-size: 1.5rem;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.newOrder,
+.ongoingOrder,
+.completedOrder,
+.cancelledOrder {
+  position: relative;
+}

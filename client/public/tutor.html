@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Login</title>
+    <!-- phoneNumbr -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <!-- BootStrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tutor.css" />
+  </head>
+  <body onload="tutorLoad()">
+    <!-- navbar Starts -->
+    <nav class="navbar">
+      <img src="assets/logo-full.jpg" alt="logo" srcset="" width="10%" />
+      <h1 class="navbarHeading">Prokatib</h1>
+      <a href="pages/contact.html" class="contactUsButton">Contact Us</a>
+    </nav>
+    <!-- navbar Ends -->
+
+    <!-- Header Starts -->
+    <header class="tutorHomeHeader">
+      <div class="container">
+        <div class="row d-flex flex-column">
+          <h1 class="text-center mb-3">Welcome Tutors</h1>
+          <div class="text-center tutorsButtons">
+            <button onclick="showThis('.tutorSignUpSection'); loadLocations();">
+              Sign Up
+            </button>
+            <button onclick="showThis('.tutorLoginSection')">Login</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="container-fluid tutorSignUpSection display-none">
+      <div class="col-lg-11">
+        <div class="tutorSignUpContainer container">
+          <div class="tutorSignUpSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.tutorSignUpSection')"
+            ></i>
+          </div>
+          <div class="tutorSignUpText sectionText text-center">
+            <h1>Sign Up</h1>
+          </div>
+          <div class="tutorSignUpContent container-fluid">
+            <div class="row justify-content-around tutorSignUpContentRow mt-1">
+              <form
+                class="tutorSignUpForm d-flex flex-column mt-2 text-center"
+                action="#"
+                novalidate
+              >
+                <p class="text-danger mb-1">Basic Info:</p>
+                <div
+                  class="basicInfoDiv d-flex flex-column flex-md-row justify-content-between"
+                >
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    id="tutorName"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Email ID"
+                    id="tutorEmail"
+                    class="form-control"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    id="tutorPhoneNumber"
+                    class="form-control"
+                    required
+                  />
+                </div>
+                <p class="text-danger mb-1">Location Info:</p>
+                <div class="locationDiv">
+                  <select
+                    name="tutorCountry"
+                    id="tutorCountryList"
+                    onchange="loadStateList()"
+                  >
+                    <option value="" selected disabled id="disabledCountry">
+                      Choose Your Country
+                    </option>
+                  </select>
+                  <select name="tutorState" id="tutorStateList" disabled>
+                    <option value="" selected disabled id="disabledState">
+                      Choose Your State
+                    </option>
+                  </select>
+                </div>
+                <p class="text-danger mb-1">Select Your Field:</p>
+                <div
+                  class="btn-group mb-3 d-flex flex-md-row flex-column"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck1"
+                    data-value="undergraduate"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck1"
+                    >Undergraduate Work</label
+                  >
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck2"
+                    data-value="master"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck2"
+                    >Master & PhD work</label
+                  >
+
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck3"
+                    data-value="proofreading"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck3"
+                    >Proofreading & Plagiarism</label
+                  >
+                </div>
+                <div
+                  class="btn-group mb-3 d-flex flex-md-row flex-column"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck4"
+                    data-value="journal"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck4"
+                    >Journal Articles & Patent Drafts</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck5"
+                    data-value="officialLetters"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck5"
+                    >Official Letters</label
+                  >
+                  <input
+                    type="checkbox"
+                    class="btn-check"
+                    id="btncheck6"
+                    data-value="website"
+                  />
+                  <label class="btn btn-outline-success" for="btncheck6"
+                    >Website, Logo & Marketing</label
+                  >
+                </div>
+                <p class="text-danger mb-1">About You:</p>
+                <textarea
+                  name="tutorDescription"
+                  cols="30"
+                  rows="2"
+                  placeholder="Write any softwares you know such as Solidworks, photoshop, computational simulation, etc"
+                  id="tutorDescription"
+                ></textarea>
+                <p class="text-danger mb-1">Set Your Password:</p>
+                <div class="tutorPasswordDiv d-flex flex-md-row flex-column">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    id="tutorPassword"
+                    class="form-control"
+                    required
+                    autocomplete="true"
+                  />
+                  <input
+                    type="password"
+                    placeholder="Confirm Your Password"
+                    id="tutorConfirmPassword"
+                    class="form-control"
+                    required
+                    autocomplete="true"
+                  />
+                </div>
+                <div class="mt-2" id="errorAuth"></div>
+                <button onclick="tutorSignUp()" type="button">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-fluid tutorLoginSection display-none">
+      <div class="col-lg-11">
+        <div class="tutorLoginContainer container">
+          <div class="tutorLoginSectionCross sectionCross">
+            <i
+              class="bi bi-x-circle"
+              onclick="hideThis('.tutorLoginSection')"
+            ></i>
+          </div>
+          <div class="tutorLoginText sectionText text-center">
+            <h1>Tutor Login</h1>
+          </div>
+          <div class="tutorLoginContent container-fluid">
+            <div class="row justify-content-around tutorLoginContentRow mt-1">
+              <form class="loginForm tutorLoginForm" action="#">
+                <input
+                  type="email"
+                  placeholder="Email ID"
+                  id="tutorLoginEmail"
+                />
+                <input
+                  type="password"
+                  name="password"
+                  id="tutorLoginPassword"
+                  placeholder="Password"
+                />
+                <div class="mt-2" id="errAuth"></div>
+                <p
+                  class="text-dark ml-3"
+                  onclick="showThis('#forgotPasswordSection'); hideThis('.tutorLoginSection')"
+                >
+                  Forgot Password
+                </p>
+                <button type="button" onclick="loginTutor()">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- forgot password starts -->
+    <section id="forgotPasswordSection">
+      <div class="forgotPasswordContainer">
+        <div class="forgotPasswordSectionCross sectionCross">
+          <i
+            class="bi bi-x-circle"
+            onclick="hideThis('#forgotPasswordSection')"
+          ></i>
+        </div>
+        <div class="forgotPasswordText text-center">
+          <h3>Reset Your Password</h3>
+        </div>
+        <form class="forgotPasswordForm">
+          <input
+            type="email"
+            id="forgotPasswordTutorEmail"
+            placeholder="Enter Your Email"
+          />
+          <input
+            type="number"
+            id="forgotPasswordTutorOtp"
+            placeholder="Enter Your OTP"
+            class="display-none"
+            disabled
+          />
+          <input
+            type="password"
+            id="forgotPasswordNewPassword"
+            placeholder="Enter New Password"
+            class="display-none"
+            disabled
+            autocomplete="true"
+          />
+          <p
+            class="forgotPasswordMessage text-center text-danger display-none"
+          ></p>
+          <button
+            type="button"
+            id="forgotPasswordButton"
+            class="mt-3"
+            onclick="forgotPassword()"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- forgot password end -->
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- owl carousal -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./js/tutor.js"></script>
+  </body>
+  <script>
+    const phoneInputField = document.querySelector("#tutorPhoneNumber");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
+</html>

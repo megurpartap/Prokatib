@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.tutorHomeHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorsButtons button {
+  cursor: pointer;
+  min-width: 15vw;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0 1rem;
+  padding: 0.5rem 2rem;
+  background-color: yellow;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.tutorSignUpSection,
+.tutorLoginSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorSignUpContainer,
+.tutorLoginContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 4rem;
+  height: 97vh;
+  max-width: 100vw;
+  background-color: rgb(235, 235, 235);
+  overflow-y: auto;
+  border-radius: 2rem 2rem;
+}
+
+.tutorLoginContainer {
+  height: 60vh;
+}
+
+.sectionCross {
+  position: absolute;
+  right: 4%;
+  top: 3%;
+}
+
+.sectionCross i {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* form */
+.tutorSignUpForm,
+.tutorLoginForm {
+  display: flex;
+}
+
+.tutorLoginForm {
+  align-items: center;
+}
+
+.loginButtonAndForgot {
+  display: flex;
+}
+
+.tutorSignUpForm input,
+.tutorSignUpForm textarea,
+.tutorSignUpForm select,
+.tutorLoginForm input {
+  /* align-self: flex-start; */
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  /* border: none; */
+  margin-bottom: 0.8rem;
+}
+
+.tutorSignUpForm textarea {
+  width: 100%;
+  min-height: 10%;
+}
+
+.tutorSignUpForm button,
+.tutorLoginForm button {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  background-color: yellow;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.checkGroup {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.checkboxDiv {
+  justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* .basicInfoDiv {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .tutorPasswordDiv {
+  display: flex;
+  justify-content: space-around;
+} */
+
+.tutorPasswordDiv input {
+  width: 40%;
+}
+
+.basicInfoDiv input {
+  width: 30%;
+}
+
+.tutorSignUpForm p {
+  align-self: flex-start;
+}
+
+.tutorSignUpForm .btn-group label {
+  flex: 1;
+  border-radius: 0;
+  margin: auto 1rem;
+}
+
+#tutorPhoneNumber {
+  width: 100%;
+}
+
+.btn-group {
+  gap: 10px;
+}
+
+#forgotPasswordSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgotPasswordContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 4rem;
+  height: 60vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.forgotPasswordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgotPasswordForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px rgba(128, 128, 128, 0.568) solid;
+  margin-bottom: 0.8rem;
+}
+
+.forgotPasswordForm button {
+  cursor: pointer;
+  /* width: 15vw; */
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  float: left;
+  background-color: yellow;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .basicInfoDiv input,
+  .tutorPasswordDiv input {
+    width: auto;
+  }
+}

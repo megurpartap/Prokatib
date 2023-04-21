@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.tutorNotApprovedMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.cd-contentRight img {
+  position: absolute;
+  right: 3%;
+  top: 35%;
+  width: 55vw;
+  /* transform: translateY(-50%); */
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+.tutorNotApprovedSection {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cd-optionList {
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+.cd-processList {
+  font-size: 1.4rem;
+}
+
+.cd-option {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.liveProjectBidsButton {
+  background-color: cornflowerblue;
+  padding: 1rem;
+  border-radius: 25px;
+  width: fit-content;
+  color: white;
+}
+
+.liveProjectBidsButton:hover {
+  transform: scale(1.07);
+}
+
+.liveProjectBidsSection,
+.updateDetailsSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitNewWorkSection {
+  display: none;
+}
+
+.liveProjectBidsContainer,
+.updateDetailsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 1rem 4rem;
+  height: 80vh;
+  max-width: 80vw;
+  background-color: rgb(235, 235, 235);
+  border-radius: 2rem;
+}
+
+.liveProjectBidsContainer {
+  overflow-y: scroll;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.sectionText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitNewWorkForm {
+  display: flex;
+}
+
+.submitNewWorkForm input,
+.submitNewWorkForm textarea,
+.submitNewWorkForm select,
+.updateForm input {
+  /* align-self: flex-start; */
+  background-color: transparent;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  /* border: none; */
+  margin-bottom: 0.8rem;
+}
+
+.submitNewWorkForm button {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  background-color: yellow;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.sectionCross {
+  position: absolute;
+  right: 4%;
+  top: 3%;
+}
+
+.sectionCross i {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.liveOrder,
+.previousOrder {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 3px 5px rgba(216, 216, 216, 0.527);
+}
+
+.cd-process1 i {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.ongoingOrdersSection,
+.completedOrdersSection,
+.liveProjectDetailSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.ongoingOrdersContainer,
+.completedOrdersContainer,
+.liveProjectDetailContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 1rem 4rem;
+  height: 80vh;
+  max-width: 80vw;
+  background-color: rgb(235, 235, 235);
+  border-radius: 2rem;
+  overflow-y: scroll;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.ongoingOrder,
+.completedOrder {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  border-radius: 2rem;
+  background-color: white;
+  box-shadow: 0px 0px 3px 5px rgba(216, 216, 216, 0.527);
+  overflow: hidden;
+}
+
+.ongoingOrder button {
+  align-self: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.orderTitle:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.liveProjectDetailDownloadButton,
+.liveProjectDetailAcceptButton {
+  width: fit-content;
+}
+
+.liveProjectDetailAcceptButton {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+}
+
+.completedOrderContentRow img,
+.ongoingOrderContentRow img {
+  width: 50%;
+}
+
+.chatMessage {
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.cd-option.chatMessageOption {
+  padding: 0;
+}
+
+.liveProjectBidsSearchBarInput {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  /* border: none; */
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .cd-contentRight img {
+    position: static;
+
+    width: 100%;
+    /* transform: translateY(-50%); */
+  }
+  .cd-content {
+    flex-direction: column-reverse;
+  }
+  .liveProjectBidsSortDiv {
+    margin: 1rem 0;
+  }
+}
+
+.updateForms {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Bootstrap overrides */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+.display-none {
+  display: none;
+}
+
+body {
+  position: relative;
+}
+
+.white-placeholder::placeholder {
+  color: black;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  background-color: #fff718;
+  justify-content: space-between;
+}
+
+nav a {
+  display: contents;
+}
+
+.navbarHeading {
+  color: #021132;
+}
+
+.logoContainer h1 {
+  font-size: 1.6rem;
+}
+
+.businesssNameContainer h1 {
+  font-size: 1.3rem;
+}
+
+.contactUsButton {
+  display: block;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: darkcyan;
+  border: none;
+  outline: none;
+}
+.contactUsButton:hover {
+  color: white;
+}
+
+/* Header */
+
+header {
+  /* width: 100vw; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#headerVideo {
+  transform: scale(1.2);
+  position: absolute;
+  left: -17%;
+  top: 10%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.serviceImgDiv img {
+  /* min-width: 80%; */
+  height: auto;
+}
+
+.headerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 4rem;
+  color: white;
+}
+
+.headerText h1 {
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.headerButtons {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.headerButtonsAndForms {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headerButtonsAndForms button,
+.placeOrderForm button,
+.loginForm button {
+  cursor: pointer;
+  min-width: 15vw;
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  float: left;
+  background-color: #fff718;
+}
+
+.placeOrderForm button,
+.loginForm button {
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.loginForm button {
+  margin-right: 2rem;
+}
+
+.loginForm p {
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.loginForm p:hover {
+  text-decoration: underline;
+}
+
+.placeOrderForm,
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  min-width: 400px;
+}
+
+.disabledForm {
+  display: none;
+}
+
+.activeForm {
+  display: flex;
+}
+
+.placeOrderForm input,
+.placeOrderForm textarea,
+.placeOrderForm select,
+.loginForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  margin-bottom: 0.8rem;
+}
+
+.placeOrderForm input:focus,
+.placeOrderForm textarea:focus,
+.placeOrderForm select:focus {
+  outline: none;
+}
+
+.placeOrderFileInput {
+  color: white;
+}
+
+.placeOrderButton {
+  border: 1px solid black;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.loginButton {
+  border: 1px solid black;
+  border-left: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* Services */
+
+.servicesSection {
+  padding: 2rem 0;
+}
+
+.servicesText {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.servicesTextUpper {
+  text-align: center;
+}
+
+.servicesTextUpper h2 {
+  font-size: 2rem;
+}
+
+.servicesText p {
+  font-size: 1.2rem;
+}
+
+/* .servicesImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 2rem;
+} */
+
+.servicesImageButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .servicesImages img {
+  margin: auto;
+  height: 60vh;
+} */
+
+.serviceButtonDiv a,
+.servicesImageButtons a {
+  min-width: 100%;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.servicesButtonContainer button,
+.servicesImageButtons button {
+  min-width: 100%;
+  margin: 1rem auto;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.servicesButtonContainer button:focus {
+  outline: none;
+}
+
+.servicesButtonContainer button:active,
+.servicesImageButtons button:active {
+  transform: translate(-5px, 5px);
+  transition: all 0.07s;
+}
+
+#serviceButton1 {
+  background-color: #ce1f6e;
+  box-shadow: -1px 1px 0px #fa2484, -2px 2px 0px #fa2484, -3px 3px 0px #fa2484,
+    -4px 4px 0px #fa2484, -5px 5px 0px #fa2484, -6px 6px 0px #fa2484;
+  color: white;
+}
+
+#serviceButton1:active {
+  box-shadow: -1px 1px 0px #fa2484;
+}
+
+#serviceButton2 {
+  background-color: #4f1dc2;
+  box-shadow: -1px 1px 0px #6425f7, -2px 2px 0px #6425f7, -3px 3px 0px #6425f7,
+    -4px 4px 0px #6425f7, -5px 5px 0px #6425f7, -6px 6px 0px #6425f7;
+  color: white;
+}
+
+#serviceButton2:active {
+  box-shadow: -1px 1px 0px #6425f7;
+}
+
+#serviceButton3 {
+  background-color: #8f8319;
+  box-shadow: -1px 1px 0px #c0b024, -2px 2px 0px #c0b024, -3px 3px 0px #c0b024,
+    -4px 4px 0px #c0b024, -5px 5px 0px #c0b024, -6px 6px 0px #c0b024;
+  color: white;
+}
+
+#serviceButton3:active {
+  box-shadow: -1px 1px 0px #c0b024;
+}
+
+#serviceButton4 {
+  background-color: #7308bb;
+  box-shadow: -1px 1px 0px #9409f3, -2px 2px 0px #9409f3, -3px 3px 0px #9409f3,
+    -4px 4px 0px #9409f3, -5px 5px 0px #9409f3, -6px 6px 0px #9409f3;
+  color: white;
+}
+
+#serviceButton4:active {
+  box-shadow: -1px 1px 0px #9409f3;
+}
+
+#serviceButton5 {
+  background-color: #128b40;
+  box-shadow: -1px 1px 0px #1fd665, -2px 2px 0px #1fd665, -3px 3px 0px #1fd665,
+    -4px 4px 0px #1fd665, -5px 5px 0px #1fd665, -6px 6px 0px #1fd665;
+  color: white;
+}
+
+#serviceButton5:active {
+  box-shadow: -1px 1px 0px #1fd665;
+}
+
+#serviceButton6 {
+  background-color: #396174;
+  box-shadow: -1px 1px 0px #518da8, -2px 2px 0px #518da8, -3px 3px 0px #518da8,
+    -4px 4px 0px #518da8, -5px 5px 0px #518da8, -6px 6px 0px #518da8;
+  color: white;
+}
+
+#serviceButton6:active {
+  box-shadow: -1px 1px 0px #518da8;
+}
+
+/* Review Section */
+
+.reviewHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.reviewHeading img {
+  margin-right: 0.6rem;
+}
+
+.card-body {
+  background-color: rgb(236, 236, 236);
+}
+
+.cardPara {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.cardName {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.owl-carousel {
+  /* background-color: #1fd665; */
+  padding: 0 2rem;
+}
+
+.owl-carousel .owl-item img {
+  /* display: block; */
+  width: 20px;
+}
+
+.owl-prev span,
+.owl-next span {
+  border-radius: 2rem;
+  padding: 0.1rem 1rem;
+  width: 43px;
+  background-color: rgb(48, 66, 165);
+  color: white;
+}
+
+.owl-prev span:focus,
+.owl-next span:focus {
+  outline: none;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 2rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerList {
+  list-style-type: none;
+  display: flex;
+}
+
+.footerListItem {
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  color: rgb(48, 66, 165);
+  font-weight: 500;
+}
+
+.footerButton {
+  border: none;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  color: gray;
+  font-weight: 500;
+}
+
+/* password set */
+#passwordSetSection,
+#forgotPasswordSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordSetContainer,
+.forgotPasswordContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 4rem;
+  height: 60vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+.passwordSetSection {
+  z-index: 100;
+}
+
+.passwordSetText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordSetForm,
+.forgotPasswordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.passwordSetForm input,
+.forgotPasswordForm input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 1px rgba(128, 128, 128, 0.568) solid;
+  margin-bottom: 0.8rem;
+}
+
+.passwordSetForm button,
+.forgotPasswordForm button {
+  cursor: pointer;
+  /* width: 15vw; */
+  font-size: 1rem;
+  font-weight: bold;
+  color: crimson;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  float: left;
+  background-color: #fff718;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.sectionCross {
+  position: absolute;
+  right: 4%;
+  top: 3%;
+}
+
+.sectionCross i {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.iti {
+  margin-bottom: 0.8rem;
+}
+
+.placeOrderForm .disabledButton {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 768px) {
+  .serviceImgDiv img {
+    position: absolute;
+  }
+
+  .servicesSection {
+    position: relative;
+  }
+
+  .serviceImgDiv1 img {
+    width: 20%;
+    top: 50px;
+    left: 7%;
+  }
+  .serviceImgDiv2 img {
+    width: 8%;
+    top: 50px;
+    right: 7%;
+  }
+}

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.contentWork {
+  background-color: aliceblue;
+  padding: 2rem 4rem;
+}
+
+.contentWork p,
+.contentWork li {
+  font-size: 1.2rem;
+}
+
+.contentWork li {
+  color: blue;
+}
+
+p strong,
+li strong {
+  color: crimson;
+}
+
+.contentHeading {
+  font-style: italic;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Macondo", sans-serif;
+}
+
+.contentUpper {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  /* padding: 2rem 4rem; */
+}
+
+.contentLeft {
+  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.contentLeft h2 {
+  margin-bottom: 2rem;
+}
+
+.contentList {
+  list-style-type: circle;
+}
+
+.contentRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentRight img {
+  width: 450px;
+}
+
+.contentBottom {
+  padding: 1rem 4rem;
+}
+
+.journalContent p {
+  font-size: 1.5rem;
+}
+
+.officialContent p {
+  font-size: 1.6rem;
+}
+
+.placeOrderForm input,
+.placeOrderForm textarea,
+.placeOrderForm select,
+.loginForm input {
+  background-color: transparent;
+  border: 1px gray solid;
+  color: black;
+}
+
+#userAlreadyAuth p,
+#errorAuth p {
+  color: black !important;
+}
+
+.placeOrderForm,
+.loginForm {
+  border: 1px rgb(62, 62, 255) solid;
+  border-radius: 25px;
+}
+
+.loginButtonAndForgot p {
+  color: black;
+}
+
+.contentWork .cookiesPara {
+  font-size: 2rem;
+}
+.contentWork .termsPara {
+  font-size: 1.5rem;
+}
+
+.contactDetailsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 20px;
+  position: relative;
+  left: 50%;
+  border: 1px blue solid;
+  border-radius: 25px;
+  padding: 2rem;
+  width: fit-content;
+  transform: translateX(-50%);
+}
