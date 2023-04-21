@@ -72,7 +72,7 @@ const placeOrder = () => {
   ) {
     return;
   }
-  fetch(`${host}:8001/customer/create`, {
+  fetch(`${host}/customer/create`, {
       method: "POST",
       body: formData,
     })
@@ -119,7 +119,7 @@ const loginCustomer = () => {
     "customerLoginPassword"
   ).value;
 
-  fetch(`${host}:8001/customer/login`, {
+  fetch(`${host}/customer/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -158,14 +158,14 @@ const loginCustomer = () => {
         );
         window.localStorage.setItem("loginUser", JSON.stringify(data.customer));
         window.location.assign(
-          `${host}:8001/pages/customerDashboard.html`
+          `${host}/pages/customerDashboard.html`
         );
       }
     });
 };
 
 const loadReviews = () => {
-  fetch(`${host}:8001/review/getHighlightedReviews`)
+  fetch(`${host}/review/getHighlightedReviews`)
     .then(function (response) {
       return response.json();
     })
@@ -197,7 +197,7 @@ const loadReviews = () => {
 const setPassword = () => {
   var customerPassword = document.getElementById("customerPassword").value;
   var customerEmail = window.localStorage.getItem("customerEmail");
-  fetch(`${host}:8001/customer/setPassword`, {
+  fetch(`${host}/customer/setPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -213,7 +213,7 @@ const setPassword = () => {
     .then((data) => {
       window.localStorage.setItem("loginUser", JSON.stringify(data.customer));
       window.location.assign(
-        `${host}:8001/pages/customerDashboard.html`
+        `${host}/pages/customerDashboard.html`
       );
     });
 };
@@ -284,7 +284,7 @@ const forgotPassword = () => {
 };
 
 const forgotPasswordSendEmail = () => {
-  fetch(`${host}:8001/customer/forgotPassword`, {
+  fetch(`${host}/customer/forgotPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -337,7 +337,7 @@ const forgotPasswordSendEmail = () => {
 };
 
 const forgotPasswordSendOtp = () => {
-  fetch(`${host}:8001/customer/checkOtp`, {
+  fetch(`${host}/customer/checkOtp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -367,7 +367,7 @@ const forgotPasswordSendOtp = () => {
 };
 
 const forgotPasswordSendPassword = () => {
-  fetch(`${host}:8001/customer/newPassword`, {
+  fetch(`${host}/customer/newPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -422,7 +422,7 @@ const uploadFiles = () => {
     formData.append("uploadedFiles", file[index]);
   }
   $.ajax({
-    url: `${host}:8001/order/uploadFile`, //Server script to process data
+    url: `${host}/order/uploadFile`, //Server script to process data
     type: "POST",
     data: formData,
     contentType: false,
