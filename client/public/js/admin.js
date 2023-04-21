@@ -1,4 +1,4 @@
-const host = "localhost";
+const host = "https://prokatib.onrender.com/";
 
 const showThis = (selector) => {
   const form = document.querySelector(selector);
@@ -13,7 +13,7 @@ const hideThis = (selector) => {
 const loadNewOrders = () => {
   var h = document.querySelector(".newOrderContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/order/getNewOrders`)
+  fetch(`http://${host}/order/getNewOrders`)
     .then(function (response) {
       return response.json();
     })
@@ -146,7 +146,7 @@ const loadOngoingOrders = () => {
   ma.innerHTML = "<h4 class=' fw-bold text-danger'>Masters</h4><hr>";
   we.innerHTML = "<h4 class=' fw-bold text-danger'>WebSite</h4><hr>";
   jo.innerHTML = "<h4 class=' fw-bold text-danger'>Journal</h4><hr>"; of .innerHTML = "<h4 class=' fw-bold text-danger'>Official Letters</h4><hr>";
-  fetch(`http://${host}:8001/order/getOngoingOrders`)
+  fetch(`http://${host}/order/getOngoingOrders`)
     .then(function (response) {
       return response.json();
     })
@@ -233,7 +233,7 @@ const loadCompletedOrders = () => {
   ma.innerHTML = "<h4 class=' fw-bold text-danger'>Masters</h4><hr>";
   we.innerHTML = "<h4 class=' fw-bold text-danger'>WebSite</h4><hr>";
   jo.innerHTML = "<h4 class=' fw-bold text-danger'>Journal</h4><hr>"; of .innerHTML = "<h4 class=' fw-bold text-danger'>Official Letters</h4><hr>";
-  fetch(`http://${host}:8001/order/getCompletedOrders`)
+  fetch(`http://${host}/order/getCompletedOrders`)
     .then(function (response) {
       return response.json();
     })
@@ -280,7 +280,7 @@ const loadCancelledOrders = () => {
   ma.innerHTML = "<h4 class=' fw-bold text-danger'>Masters</h4><hr>";
   we.innerHTML = "<h4 class=' fw-bold text-danger'>WebSite</h4><hr>";
   jo.innerHTML = "<h4 class=' fw-bold text-danger'>Journal</h4><hr>"; of .innerHTML = "<h4 class=' fw-bold text-danger'>Official Letters</h4><hr>";
-  fetch(`http://${host}:8001/order/getCancelledOrders`)
+  fetch(`http://${host}/order/getCancelledOrders`)
     .then(function (response) {
       return response.json();
     })
@@ -327,7 +327,7 @@ const approveOrder = (orderId) => {
 
     throw new Error("Choose a service");
   }
-  fetch(`http://${host}:8001/order/approveOrder`, {
+  fetch(`http://${host}/order/approveOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -352,7 +352,7 @@ const approveOrder = (orderId) => {
 };
 
 const completeOrder = (orderId) => {
-  fetch(`http://${host}:8001/order/markCompleteOrder`, {
+  fetch(`http://${host}/order/markCompleteOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -371,14 +371,14 @@ const completeOrder = (orderId) => {
 };
 
 const logout = () => {
-  window.location.assign(`http://${host}:8001/adminLogin.html`);
+  window.location.assign(`http://${host}/adminLogin.html`);
 };
 
 const loginAdmin = () => {
   var adminLoginUsername = document.getElementById("adminLoginUsername").value;
   var adminLoginPassword = document.getElementById("adminLoginPassword").value;
 
-  fetch(`http://${host}:8001/admin/login`, {
+  fetch(`http://${host}/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -398,7 +398,7 @@ const loginAdmin = () => {
       }
     })
     .then((data) => {
-      window.location.assign(`http://${host}:8001/pages/admin.html`);
+      window.location.assign(`http://${host}/pages/admin.html`);
       window.localStorage.setItem("loginUser", JSON.stringify(data.admin));
     });
 };
@@ -406,7 +406,7 @@ const loginAdmin = () => {
 const loadNewTutors = () => {
   var h = document.querySelector(".newTutorContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/tutor/getNewTutors`)
+  fetch(`http://${host}/tutor/getNewTutors`)
     .then(function (response) {
       return response.json();
     })
@@ -461,7 +461,7 @@ const loadNewTutors = () => {
 };
 
 const approveTutor = (tutorId) => {
-  fetch(`http://${host}:8001/tutor/approveTutor`, {
+  fetch(`http://${host}/tutor/approveTutor`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -482,7 +482,7 @@ const approveTutor = (tutorId) => {
 };
 
 const blockTutor = (tutorId) => {
-  fetch(`http://${host}:8001/tutor/blockTutor`, {
+  fetch(`http://${host}/tutor/blockTutor`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -503,7 +503,7 @@ const blockTutor = (tutorId) => {
 };
 
 const rejectTutor = (tutorId) => {
-  fetch(`http://${host}:8001/tutor/rejectTutor`, {
+  fetch(`http://${host}/tutor/rejectTutor`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -529,7 +529,7 @@ const rejectTutor = (tutorId) => {
 const loadApprovedTutors = () => {
   var h = document.querySelector(".approvedTutorContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/tutor/getApprovedTutors`)
+  fetch(`http://${host}/tutor/getApprovedTutors`)
     .then(function (response) {
       return response.json();
     })
@@ -594,7 +594,7 @@ const loadTutorDetails = (tutorId) => {
     );
     return;
   }
-  fetch(`http://${host}:8001/tutor/getTutorDetails`, {
+  fetch(`http://${host}/tutor/getTutorDetails`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -637,7 +637,7 @@ const loadTutorDetails = (tutorId) => {
 const loadNewReviews = () => {
   var h = document.querySelector(".newReviewContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/review/getNotHighlightedReviews`)
+  fetch(`http://${host}/review/getNotHighlightedReviews`)
     .then(function (response) {
       return response.json();
     })
@@ -682,7 +682,7 @@ const loadNewReviews = () => {
 const loadNewMessages = () => {
   var h = document.querySelector(".newMessageContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/contactUs/getContactUsMessages`)
+  fetch(`http://${host}/contactUs/getContactUsMessages`)
     .then(function (response) {
       return response.json();
     })
@@ -726,7 +726,7 @@ const loadNewMessages = () => {
 const loadHighlightedReviews = () => {
   var h = document.querySelector(".highlightedReviewContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/review/getHighlightedReviews`)
+  fetch(`http://${host}/review/getHighlightedReviews`)
     .then(function (response) {
       return response.json();
     })
@@ -760,7 +760,7 @@ const loadHighlightedReviews = () => {
 };
 
 const highlightReview = (reviewId) => {
-  fetch(`http://${host}:8001/review/highlightReview`, {
+  fetch(`http://${host}/review/highlightReview`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -779,7 +779,7 @@ const highlightReview = (reviewId) => {
 };
 
 const unHighlightReview = (reviewId) => {
-  fetch(`http://${host}:8001/review/unHighlightReview`, {
+  fetch(`http://${host}/review/unHighlightReview`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -797,7 +797,7 @@ const unHighlightReview = (reviewId) => {
     });
 };
 const removeReview = (reviewId) => {
-  fetch(`http://${host}:8001/review/removeReview`, {
+  fetch(`http://${host}/review/removeReview`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -820,7 +820,7 @@ const openChatBox = () => {
 };
 
 const downloadOrderFiles = (orderId) => {
-  window.open(`http://${host}:8001/order/downloadOrderFiles/${orderId}`);
+  window.open(`http://${host}/order/downloadOrderFiles/${orderId}`);
 };
 
 const openWhatsappChat = (phoneNumber) => {
@@ -829,7 +829,7 @@ const openWhatsappChat = (phoneNumber) => {
 
 const replyToMessage = (messageId) => {
   const reply = $(`.${messageId}-contactUsReplyTextArea`).val();
-  fetch(`http://${host}:8001/contactUs/replyToMessage`, {
+  fetch(`http://${host}/contactUs/replyToMessage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -857,7 +857,7 @@ const replyToMessage = (messageId) => {
 };
 
 const cancelOrder = (orderId) => {
-  fetch(`http://${host}:8001/order/cancelOrder`, {
+  fetch(`http://${host}/order/cancelOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -878,7 +878,7 @@ const cancelOrder = (orderId) => {
 };
 
 const refundOrder = (orderId) => {
-  fetch(`http://${host}:8001/order/refundOrder`, {
+  fetch(`http://${host}/order/refundOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

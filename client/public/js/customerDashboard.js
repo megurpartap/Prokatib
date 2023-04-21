@@ -1,15 +1,15 @@
-const host = "localhost";
+const host = "https://prokatib.onrender.com/";
 
 const loadDetails = () => {
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
   if (!loginCustomer) {
-    window.open(`http://${host}:8001/index.html`, "_self");
+    window.open(`http://${host}/index.html`, "_self");
   }
 
   $(".customerDashboardHeading").html(
     `Welcome ${loginCustomer.customerName}!!</br><span style="font-size:1.5rem">Your Customer Id: ${loginCustomer._id}</span>`
   );
-  fetch(`http://${host}:8001/customer/getLiveOrders`, {
+  fetch(`http://${host}/customer/getLiveOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -27,7 +27,7 @@ const loadDetails = () => {
         $(".customerOrderId").text(
           `(You currently don't have any live orders.)`
         );
-        fetch(`http://${host}:8001/customer/getPreviousOrders`, {
+        fetch(`http://${host}/customer/getPreviousOrders`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json; charset=utf-8",
@@ -60,7 +60,7 @@ const loadDetails = () => {
         return;
       }
       $(".cd-processList").removeClass("display-none");
-      fetch(`http://${host}:8001/order/getOrderDetails`, {
+      fetch(`http://${host}/order/getOrderDetails`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json; charset=utf-8",
@@ -121,7 +121,7 @@ const submitNewWork = () => {
   if (!validateInput("orderService orderFiles")) {
     return;
   }
-  fetch(`http://${host}:8001/order/create`, {
+  fetch(`http://${host}/order/create`, {
       method: "POST",
       body: formData,
     })
@@ -148,7 +148,7 @@ const loadLiveOrders = () => {
   var h = document.querySelector(".liveOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}:8001/customer/getLiveOrders`, {
+  fetch(`http://${host}/customer/getLiveOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -223,7 +223,7 @@ const loadPreviousOrders = () => {
   var h = document.querySelector(".previousOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}:8001/customer/getPreviousOrders`, {
+  fetch(`http://${host}/customer/getPreviousOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -307,7 +307,7 @@ const loadCancelledOrders = () => {
   var h = document.querySelector(".cancelledOrderContentRow");
   h.innerHTML = "";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}:8001/customer/getCancelledOrders`, {
+  fetch(`http://${host}/customer/getCancelledOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -399,7 +399,7 @@ const createOrderReview = (orderId) => {
     `${orderId}-createOrderReview`
   ).style.backgroundColor = "transparent";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}:8001/review/create`, {
+  fetch(`http://${host}/review/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -434,7 +434,7 @@ const createPreviousOrderReview = (orderId) => {
     `${orderId}-previousOrderReviewTextArea`
   ).style.backgroundColor = "transparent";
   var loginCustomer = JSON.parse(window.localStorage.getItem("loginUser"));
-  fetch(`http://${host}:8001/review/create`, {
+  fetch(`http://${host}/review/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -465,7 +465,7 @@ const uploadFilesFromDashboard = () => {
     formData.append("uploadedFiles", file[index]);
   }
   $.ajax({
-    url: `http://${host}:8001/order/uploadFile`, //Server script to process data
+    url: `http://${host}/order/uploadFile`, //Server script to process data
     type: "POST",
     data: formData,
     contentType: false,
@@ -488,7 +488,7 @@ const openChatBox = () => {
 };
 
 const logout = () => {
-  window.location.assign(`http://${host}:8001/index.html`);
+  window.location.assign(`http://${host}/index.html`);
 };
 
 const updateCustomerEmail = () => {
@@ -497,7 +497,7 @@ const updateCustomerEmail = () => {
   if (!validateInput("updateEmailInput")) {
     return;
   }
-  fetch(`http://${host}:8001/customer/updateCustomerEmail`, {
+  fetch(`http://${host}/customer/updateCustomerEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -527,7 +527,7 @@ const updateCustomerPhoneNumber = () => {
   if (!validateInput("updatePhoneNumberInput")) {
     return;
   }
-  fetch(`http://${host}:8001/customer/updateCustomerPhoneNumber`, {
+  fetch(`http://${host}/customer/updateCustomerPhoneNumber`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

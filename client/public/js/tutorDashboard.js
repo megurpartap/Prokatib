@@ -1,4 +1,4 @@
-const host = "localhost";
+const host = "https://prokatib.onrender.com/";
 
 const showThis = (selector) => {
   const form = document.querySelector(selector);
@@ -13,9 +13,9 @@ const hideThis = (selector) => {
 const loadDetails = () => {
   var loginTutor = JSON.parse(window.localStorage.getItem("loginTutor"));
   if (!loginTutor) {
-    window.open(`http://${host}:8001/tutor.html`, "_self");
+    window.open(`http://${host}/tutor.html`, "_self");
   }
-  fetch(`http://${host}:8001/tutor/getTutorDetails`, {
+  fetch(`http://${host}/tutor/getTutorDetails`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -45,7 +45,7 @@ const loadDetails = () => {
 const loadLiveProjectBids = () => {
   var h = document.querySelector(".liveProjectBidsBody");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/order/getLiveProjectBids`)
+  fetch(`http://${host}/order/getLiveProjectBids`)
     .then((response) => {
       return response.json();
     })
@@ -584,7 +584,7 @@ const loadOngoingOrders = () => {
   var loginTutor = JSON.parse(window.localStorage.getItem("loginTutor"));
   var h = document.querySelector(".ongoingOrderContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/tutor/getTutorOngoingOrders`, {
+  fetch(`http://${host}/tutor/getTutorOngoingOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -631,7 +631,7 @@ const loadCompletedOrders = () => {
   var loginTutor = JSON.parse(window.localStorage.getItem("loginTutor"));
   var h = document.querySelector(".completedOrderContentRow");
   h.innerHTML = "";
-  fetch(`http://${host}:8001/tutor/getTutorCompletedOrders`, {
+  fetch(`http://${host}/tutor/getTutorCompletedOrders`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -674,7 +674,7 @@ const loadCompletedOrders = () => {
 
 const acceptOrder = (orderId) => {
   var loginTutor = JSON.parse(window.localStorage.getItem("loginTutor"));
-  fetch(`http://${host}:8001/tutor/acceptOrder`, {
+  fetch(`http://${host}/tutor/acceptOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -700,7 +700,7 @@ const acceptOrder = (orderId) => {
 };
 
 const loadLiveProjectDetails = (orderId) => {
-  fetch(`http://${host}:8001/order/getOrderDetails`, {
+  fetch(`http://${host}/order/getOrderDetails`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -739,7 +739,7 @@ const loadLiveProjectDetails = (orderId) => {
 };
 
 const rejectOrder = (orderId) => {
-  fetch(`http://${host}:8001/order/rejectOrder`, {
+  fetch(`http://${host}/order/rejectOrder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -758,7 +758,7 @@ const rejectOrder = (orderId) => {
 };
 
 const logout = () => {
-  window.location.assign(`http://${host}:8001/tutor.html`);
+  window.location.assign(`http://${host}/tutor.html`);
 };
 
 const openChatBox = () => {
@@ -766,7 +766,7 @@ const openChatBox = () => {
 };
 
 const downloadOrderFiles = (orderId) => {
-  window.open(`http://${host}:8001/order/downloadOrderFiles/${orderId}`);
+  window.open(`http://${host}/order/downloadOrderFiles/${orderId}`);
 };
 
 const updateTutorEmail = () => {
@@ -775,7 +775,7 @@ const updateTutorEmail = () => {
   if (!validateInput("updateEmailInput")) {
     return;
   }
-  fetch(`http://${host}:8001/tutor/updateTutorEmail`, {
+  fetch(`http://${host}/tutor/updateTutorEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
@@ -839,7 +839,7 @@ const updateTutorPhoneNumber = () => {
   if (!validateInput("updatePhoneNumberInput")) {
     return;
   }
-  fetch(`http://${host}:8001/tutor/updateTutorPhoneNumber`, {
+  fetch(`http://${host}/tutor/updateTutorPhoneNumber`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
